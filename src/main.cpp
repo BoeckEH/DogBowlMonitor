@@ -28,7 +28,7 @@ RTC_DATA_ATTR int noWaterCount = 0;  // has to be empty for x number of checks
 RTC_DATA_ATTR int reminderCount = 0; // wait this many wake cycles from last broadcast of no water (REPEAT_NUMBER * TIME_TO_SLEEP)
 
 const char theHost[] = "www.littlenodes.com";
-const char theRest[] = "https://www.littlenodes.com/api/alexa/triggeralexa.php?email=pretzel00@hotmail.com&apikey=LIWVUsFTg9qZvmKi5h1yEDR2lQpzCnPur6dX34Mtkejo7";
+const char theRest[] = "https://www.littlenodes.com/api/alexa/triggeralexa.php?email=[YOUR EMAIL]&apikey=[YOUR API KEY]";
 
 WiFiMulti wifiMulti;
 
@@ -46,7 +46,8 @@ void wifiSetup()
 
   // Set WIFI module to STA mode
   WiFi.mode(WIFI_STA);
-
+  
+  // These are from credentials.h.  Ypu need to creat the file and put these #defines in there.
   wifiMulti.addAP(MySSID1, MyPassword);
   wifiMulti.addAP(MySSID2, MyPassword);
   wifiMulti.addAP(MySSID3, MyPassword);
